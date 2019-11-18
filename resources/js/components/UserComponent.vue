@@ -21,6 +21,7 @@
 			          	<thead>
 			          	<tr>
 			          		<th>#</th>
+                    <th>Usuario</th>
 			          		<th>Email</th>
 			          		<th>Password</th>
 			          		<th>Opciones</th>
@@ -28,10 +29,11 @@
 			          	</thead>
 			          	<tbody>
 			          	<list-user-component 
-			          		v-for="user in users" 
+			          		v-for="(user, index) in users" 
 			          		:key="user.id"
 			          		:user="user"
-			          		>          			
+                    @update="updateUser(index, ...arguments)"
+			          		@delete="deleteUser(index)">          			
 			          	</list-user-component>
 			          	</tbody>          	
 		        	</table>
@@ -56,12 +58,21 @@
     		}
     	},
         mounted() {
-            console.log('Component mounted.')
+            axios.get('/users').then((response) => {
+              console.log(response);
+              this.users = response.data;
+            });
         },
         methods: {
         	addUser(user) {
         		this.users.push(user); 
-        	}
+        	},
+          updateUser(index, user){
+            this.users[index] = user;
+          },
+          deleteUser(index) {
+            this.users.splice(index, 1);
+          }
         }
     }
 </script>

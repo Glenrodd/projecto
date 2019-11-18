@@ -13,6 +13,10 @@
 			<div class="panel-body">
 				<form action="" v-on:submit.prevent="newUser()">
 					<div class="form-group">
+						<label for="name">Usuario:</label>
+						<input type="text" class="form-control" name="name" v-model="name">
+					</div>
+					<div class="form-group">
 						<label for="email">Email:</label>
 						<input type="email" class="form-control" name="email" v-model="email">
 					</div>
@@ -39,6 +43,7 @@
 	export default {
 		data(){
 			return {
+				name: '',
 				email: '',
 				password: ''
 			}
@@ -48,15 +53,18 @@
 		},
 		methods: {
 			newUser() {
-				const user = {
-					id: 2,
+				const params = {
+					name: this.name,
 					email: this.email,
 					password: this.password
 				};
-				this.$emit('new', user);
+				this.name = '';
 				this.email = '';
 				this.password = '';
-
+				axios.post('/users', params).then((responde)=> {
+					const user = responde.data;
+					this.$emit('new', user);
+				});
 			}
 		}
 	}

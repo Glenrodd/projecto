@@ -21,5 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
 	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('mostarusers','UserController@list');
 	Route::resource('/users','UserController');
 });

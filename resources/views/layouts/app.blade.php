@@ -83,7 +83,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="/home" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Inicio
@@ -137,8 +137,9 @@
   </aside>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    @yield('content')
-    
+    <div id="app">
+      @yield('content')
+    </div>    
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">

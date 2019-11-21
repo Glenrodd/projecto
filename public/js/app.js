@@ -50896,8 +50896,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/roddwy/PROJECTS/project-one/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/roddwy/PROJECTS/project-one/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/roddwy/EBA_PROJECTS/faceba/projecto/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/roddwy/EBA_PROJECTS/faceba/projecto/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

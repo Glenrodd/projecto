@@ -18,10 +18,10 @@
 
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
-	/*Route::get('/', function () {
-		return view('welcome');
-	});*/
-	Route::get('/', 'HomeController@index')->name('home');
-	Route::get('mostarusers','UserController@list');
-	Route::resource('/users','UserController');
+
+	//Route::group(['middleware' => ['permission:FACEBA']], function () {
+		Route::get('/', 'HomeController@index')->name('home');
+		Route::get('mostarusers','UserController@list');
+		Route::resource('/users','UserController');
+	//});
 });

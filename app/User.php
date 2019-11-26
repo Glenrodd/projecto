@@ -12,7 +12,7 @@ class User extends Authenticatable
     use Notifiable;
     use HasRoles;
 
-    protected $table = '_bp_usuarios';
+    protected $table = 'public._bp_usuarios';
     protected $primaryKey = "usr_id";
     protected $guard_name = 'web';
     /**

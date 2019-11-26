@@ -11114,3 +11114,25 @@ a.text-dark:focus {
   }
 }
 
+.navbar-faceba {
+  background: #AF7AC5;
+  color: white;
+}
+
+.sidebar {
+  background: #797D7F;
+  color: white;
+}
+
+.sidebar ul a {
+  color: white;
+}
+
+.brand-link {
+  background: #797D7F;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #f7f7f7;
+}
+
